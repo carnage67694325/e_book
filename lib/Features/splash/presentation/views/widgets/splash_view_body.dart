@@ -1,5 +1,9 @@
+import 'package:e_book/Features/home/data/presentation/views/home_view.dart';
 import 'package:e_book/Features/splash/presentation/views/widgets/sliding_animted_logo.dart';
+import 'package:e_book/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,12 +19,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 500));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, .25), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
+    initiSlidingAnimation();
+    transitionToHomeView();
   }
 
   @override
@@ -36,5 +36,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
           animationController: animationController,
           slidingAnimation: slidingAnimation),
     );
+  }
+
+  void initiSlidingAnimation() {
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, .25), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
+  }
+
+  void transitionToHomeView() {
+    Future.delayed(const Duration(milliseconds: 1200), () {
+      Get.to(const HomeView(),
+          transition: Transition.circularReveal, duration: kTransitionDuration);
+    });
   }
 }
