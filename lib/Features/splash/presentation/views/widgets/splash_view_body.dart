@@ -1,4 +1,4 @@
-import 'package:e_book/Features/home/data/presentation/views/home_view.dart';
+import 'package:e_book/Features/home/presentation/views/home_view.dart';
 import 'package:e_book/Features/splash/presentation/views/widgets/sliding_animted_logo.dart';
 import 'package:e_book/constants.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,5 @@
+import 'package:e_book/Features/home/presentation/views/widget/home_view_body.dart';
+import 'package:e_book/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,7 +8,8 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kPrimaryColor,
+      body: HomeViewBody(),
     );
   }
 }
