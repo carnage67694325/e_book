@@ -6,20 +6,17 @@ class BookCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverFixedExtentList(
-          itemExtent: MediaQuery.of(context).size.width * 0.4,
-          delegate: SliverChildBuilderDelegate((context, index) {
-            return const Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: BookCard(),
-            );
-          }, childCount: 10),
-        )
-      ],
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.3,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: BookCard(),
+          );
+        },
+      ),
     );
   }
 }
