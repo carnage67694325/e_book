@@ -22,10 +22,17 @@ abstract class AppRouter {
               route: const HomeView());
         },
       ),
+      // GoRoute(
+      //   path: kBookDetailsRoute,
+      //   pageBuilder: (context, state) {
+      //     return TransitionAnimation.zoomInAnimatition(state,
+      //         route: const BookDetailsView());
+      //   },
+      // ),
       GoRoute(
         path: kBookDetailsRoute,
         pageBuilder: (context, state) {
-          return TransitionAnimation.zoomInAnimatition(state,
+          return TransitionAnimation.slidingFromBottomAnimation(state,
               route: const BookDetailsView());
         },
       ),
