@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
-      body: HomeViewBody(),
+      body: SafeArea(child: HomeViewBody()),
     );
   }
 }
