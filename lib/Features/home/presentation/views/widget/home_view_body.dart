@@ -11,28 +11,26 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.082,
-          vertical: MediaQuery.of(context).size.height * 0.05),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 48),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomAppBar(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
+          const SizedBox(
+            height: 46.9,
           ),
           SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
               child: const BookCardList()),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.055,
+          const SizedBox(
+            height: 49,
           ),
           const Text(
             'Best Seller',
             style: Styles.textStyle18,
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.02,
+          const SizedBox(
+            height: 20,
           ),
           const BestSellerCard()
         ],

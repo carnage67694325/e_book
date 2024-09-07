@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   google_fonts: ^6.2.1
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +79,7 @@ flutter:
   fonts:
     - family: GTSectraFine
       fonts:
-        - asset: fonts/GT-Sectra-Fine-Regular.ttf
+        - asset: assets/fonts/GT-Sectra-Fine-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

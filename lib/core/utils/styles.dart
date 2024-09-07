@@ -1,6 +1,5 @@
 import 'package:e_book/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class Styles {
   static const textStyle14 =
@@ -14,9 +13,11 @@ abstract class Styles {
   static const textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.normal,
-    fontFamily: kGTSectraFine,
   );
 
-  static const textStyle30 =
-      TextStyle(fontSize: 18, fontWeight: FontWeight.normal);
+  static const textStyle30 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.normal,
+    fontFamily: kGTSectraFine,
+  );
 }
