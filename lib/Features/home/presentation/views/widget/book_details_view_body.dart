@@ -1,6 +1,8 @@
 import 'package:e_book/Features/home/presentation/views/widget/book_card.dart';
+import 'package:e_book/Features/home/presentation/views/widget/book_details_section.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:e_book/Features/home/presentation/views/widget/custom_book_details_app_bar.dart';
+import 'package:e_book/Features/home/presentation/views/widget/similar_books_section.dart';
 import 'package:e_book/core/utils/styles.dart';
 import 'package:e_book/core/utils/widgets/books_action.dart';
 import 'package:flutter/material.dart';
@@ -10,48 +12,34 @@ class BookDetailsViewBodys extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        children: [
-          const CustomBookDetailsAppBar(),
-          const SizedBox(
-            height: 33.2,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.20),
-            child: const BookCard(),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          const Text(
-            'The Jungle Book',
-            style: Styles.textStyle30,
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          const Opacity(
-            opacity: .7,
-            child: Text(
-              'Rudyard Kipling',
-              style: Styles.textStyle18,
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                CustomBookDetailsAppBar(),
+                BookDetailsSection(),
+                SizedBox(
+                  height: 37,
+                ),
+                BooksAction(),
+                Expanded(
+                  child: SizedBox(
+                    height: 49,
+                  ),
+                ),
+                SimilarBooksSection(),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          const BookRating(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 37,
-          ),
-          const BooksAction()
-        ],
-      ),
+        )
+      ],
     );
   }
 }
