@@ -13,7 +13,7 @@ class BestSellerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsRoute);
+        GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute);
       },
       child: Row(
         children: [

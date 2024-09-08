@@ -1,9 +1,6 @@
-import 'package:e_book/Features/home/presentation/views/widget/book_card.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_details_section.dart';
-import 'package:e_book/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:e_book/Features/home/presentation/views/widget/custom_book_details_app_bar.dart';
 import 'package:e_book/Features/home/presentation/views/widget/similar_books_section.dart';
-import 'package:e_book/core/utils/styles.dart';
 import 'package:e_book/core/utils/widgets/books_action.dart';
 import 'package:flutter/material.dart';
 

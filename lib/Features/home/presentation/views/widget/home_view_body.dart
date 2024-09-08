@@ -51,7 +51,7 @@ class HomeViewBody extends StatelessWidget {
       ),
       const SliverPadding(
         padding: EdgeInsets.symmetric(horizontal: 30),
-        sliver: BestSellerBookList(),
+        sliver: VerticalBookList(),
       ),
     ]);
   }
