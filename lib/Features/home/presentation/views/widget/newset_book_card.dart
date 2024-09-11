@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:e_book/constants.dart';
 import 'package:e_book/core/utils/app_router.dart';
@@ -6,9 +8,12 @@ import 'package:e_book/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerCard extends StatelessWidget {
-  const BestSellerCard({super.key});
-
+class NewsetBookCard extends StatelessWidget {
+  const NewsetBookCard({
+    super.key,
+    required this.book,
+  });
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,14 +25,11 @@ class BestSellerCard extends StatelessWidget {
           SizedBox(
             height: 100,
             child: AspectRatio(
-              aspectRatio: 2.8 / 4,
-              child: Container(
-                  decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
-                    fit: BoxFit.fill, image: AssetImage(AssetsData.testImage)),
-              )),
-            ),
+                aspectRatio: 2.6 / 4,
+                child: CachedNetworkImage(
+                  imageUrl: book.volumeInfo?.imageLinks?.thumbnail ??
+                      AssetsData.comicCover,
+                )),
           ),
           const SizedBox(
             width: 30,
@@ -38,7 +40,7 @@ class BestSellerCard extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: Text(
-                  'Harry Potter and the Goblet of Fire',
+                  book.volumeInfo?.title ?? 'Title',
                   style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -47,16 +49,19 @@ class BestSellerCard extends StatelessWidget {
               const SizedBox(
                 height: 2,
               ),
-              const Text(
-                'J.K. Rowling',
-                style: Styles.textStyle14,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  book.volumeInfo?.authors?[0] ?? 'unknown',
+                  style: Styles.textStyle14,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               Row(
                 children: [
                   Text(
-                    '19.99 €',
+                    'Free',
                     style: Styles.textStyle20
                         .copyWith(fontWeight: FontWeight.bold),
                     maxLines: 1,
@@ -65,7 +70,10 @@ class BestSellerCard extends StatelessWidget {
                   const SizedBox(
                     width: 44.3,
                   ),
-                  const BookRating(),
+                  const BookRating(
+                    rating: 0,
+                    count: 250,
+                  ),
                 ],
               ),
             ],

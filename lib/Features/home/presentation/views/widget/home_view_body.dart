@@ -1,4 +1,4 @@
-import 'package:e_book/Features/home/presentation/views/widget/best_seller_book_list.dart';
+import 'package:e_book/Features/home/presentation/views/widget/newset_book_list.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_card_list.dart';
 import 'package:e_book/Features/home/presentation/views/widget/custom_app_bar.dart';
 import 'package:e_book/core/utils/styles.dart';
@@ -39,7 +39,7 @@ class HomeViewBody extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: Text(
-                'Best Seller',
+                'Newset comics',
                 style: Styles.textStyle18,
               ),
             ),
