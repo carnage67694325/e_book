@@ -13,7 +13,10 @@ class SimilarBooksList extends StatelessWidget {
             itemBuilder: (context, index) {
               return const Padding(
                 padding: EdgeInsets.only(right: 15),
-                child: BookCard(),
+                child: BookCard(
+                  urlImage:
+                      'https://media.printables.com/media/prints/550359/images/4421183_7c3ad661-3542-4a04-83ed-21466b813ff6/thumbs/inside/1280x960/png/baby-yoda-jedi-health.webp',
+                ),
               );
             }));
   }

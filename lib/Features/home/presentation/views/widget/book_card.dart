@@ -1,21 +1,20 @@
-import 'package:e_book/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  const BookCard({super.key});
-
+  const BookCard({super.key, required this.urlImage});
+  final String urlImage;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: AspectRatio(
-        aspectRatio: 2.6 / 4,
-        child: Container(
-            decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: Colors.amber,
-          image: const DecorationImage(
-              fit: BoxFit.fill, image: AssetImage(AssetsData.testImage)),
-        )),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: SizedBox(
+        child: AspectRatio(
+            aspectRatio: 2.6 / 4,
+            child: CachedNetworkImage(
+              imageUrl: urlImage,
+              placeholder: (context, url) => const Icon(Icons.error),
+            )),
       ),
     );
   }
