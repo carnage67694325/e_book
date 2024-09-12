@@ -3,6 +3,8 @@ import 'package:e_book/Features/home/data/repos/home_repo_impl.dart';
 import 'package:e_book/Features/home/presentation/view_models/similiar_books_cubit/similar_books_cubit.dart';
 import 'package:e_book/Features/home/presentation/views/book_details_view.dart';
 import 'package:e_book/Features/home/presentation/views/home_view.dart';
+import 'package:e_book/Features/search/data/repos/search_repo_impl.dart';
+import 'package:e_book/Features/search/presentation/view_model/search_book_cubit/search_book_cubit.dart';
 import 'package:e_book/Features/search/presentation/views/search_view.dart';
 import 'package:e_book/Features/splash/presentation/views/splash_view.dart';
 import 'package:e_book/core/utils/animation/transition_animation.dart';
@@ -44,7 +46,11 @@ abstract class AppRouter {
         path: kSearchViewRoute,
         pageBuilder: (context, state) {
           return TransitionAnimation.slidingFromBottomAnimation(state,
-              route: const SearchView());
+              route: BlocProvider(
+                create: (context) =>
+                    SearchBookCubit(getIt.get<SearchRepoImpl>()),
+                child: const SearchView(),
+              ));
         },
       ),
     ],

@@ -1,8 +1,10 @@
 import 'dart:ui';
 
+import 'package:e_book/Features/search/presentation/view_model/search_book_cubit/search_book_cubit.dart';
 import 'package:e_book/constants.dart';
 import 'package:e_book/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomSearchTextfield extends StatelessWidget {
   const CustomSearchTextfield({super.key});
@@ -23,6 +25,10 @@ class CustomSearchTextfield extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(2.0),
             child: TextField(
+              onSubmitted: (value) {
+                BlocProvider.of<SearchBookCubit>(context)
+                    .searchBook(searchBook: value);
+              },
               // textAlign: TextAlign.center,
               decoration: InputDecoration(
                   hintText: 'Search',

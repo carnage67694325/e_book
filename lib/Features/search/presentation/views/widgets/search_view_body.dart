@@ -1,6 +1,7 @@
 import 'package:e_book/Features/home/presentation/views/widget/newset_book_list.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_card_list.dart';
 import 'package:e_book/Features/search/presentation/views/widgets/custom_search_textfield.dart';
+import 'package:e_book/Features/search/presentation/views/widgets/search_results_list.dart';
 import 'package:e_book/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -36,9 +37,7 @@ class SearchViewBody extends StatelessWidget {
         SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             // sliver: VerticalBookList())
-            sliver: SliverToBoxAdapter(
-              child: Text('data'),
-            )),
+            sliver: SearchResultsList()),
       ],
     );
   }
