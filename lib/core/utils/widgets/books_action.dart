@@ -1,9 +1,13 @@
+import 'dart:developer';
+
+import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
 import 'package:e_book/core/utils/widgets/custom_button_text.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +16,7 @@ class BooksAction extends StatelessWidget {
       child: Row(
         children: [
           CustomButtonText(
-            onPressed: () {},
+            onPressed: () async {},
             splashColor: const Color(0xffEF8262),
             text: 'Free',
             textColor: Colors.black,
@@ -23,10 +27,16 @@ class BooksAction extends StatelessWidget {
             ),
           ),
           CustomButtonText(
-            onPressed: () {},
+            onPressed: () async {
+              final uri = Uri.parse(book.volumeInfo!.previewLink!);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri);
+                log('tapped');
+              }
+            },
             splashColor: Colors.black,
             fontSize: 16,
-            text: 'Free Preview',
+            text: 'Preview',
             textColor: Colors.white,
             backGorundColor: const Color(0xffEF8262),
             borderRadius: const BorderRadius.only(
