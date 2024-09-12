@@ -12,6 +12,7 @@ class BookCard extends StatelessWidget {
         child: AspectRatio(
             aspectRatio: 2.6 / 4,
             child: CachedNetworkImage(
+              fit: BoxFit.fill,
               imageUrl: urlImage,
               placeholder: (context, url) => const Icon(Icons.error),
             )),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class VerticalBookList extends StatelessWidget {
-  const VerticalBookList({Key? key}) : super(key: key);
+  const VerticalBookList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,16 @@ class VerticalBookList extends StatelessWidget {
           return SliverToBoxAdapter(
               child: ErrorText(errMessage: state.errMessage));
         } else {
-          return const SliverToBoxAdapter(child: Loading());
+          return const SliverToBoxAdapter(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 130,
+              ),
+              Loading(),
+            ],
+          ));
         }
       },
     );

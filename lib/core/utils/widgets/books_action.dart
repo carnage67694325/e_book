@@ -14,7 +14,7 @@ class BooksAction extends StatelessWidget {
           CustomButtonText(
             onPressed: () {},
             splashColor: const Color(0xffEF8262),
-            text: '19.99€',
+            text: 'Free',
             textColor: Colors.black,
             backGorundColor: Colors.white,
             borderRadius: const BorderRadius.only(

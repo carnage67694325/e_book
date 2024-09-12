@@ -1,9 +1,14 @@
+import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/Features/home/data/repos/home_repo_impl.dart';
+import 'package:e_book/Features/home/presentation/view_models/similiar_books_cubit/similar_books_cubit.dart';
 import 'package:e_book/Features/home/presentation/views/book_details_view.dart';
 import 'package:e_book/Features/home/presentation/views/home_view.dart';
 import 'package:e_book/Features/search/presentation/views/search_view.dart';
 import 'package:e_book/Features/splash/presentation/views/splash_view.dart';
 import 'package:e_book/core/utils/animation/transition_animation.dart';
+import 'package:e_book/core/utils/service_locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -28,7 +33,11 @@ abstract class AppRouter {
         path: kBookDetailsViewRoute,
         pageBuilder: (context, state) {
           return TransitionAnimation.slidingFromBottomAnimation(state,
-              route: const BookDetailsView());
+              route: BlocProvider(
+                create: (context) =>
+                    SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+                child: BookDetailsView(book: state.extra as BookModel),
+              ));
         },
       ),
       GoRoute(

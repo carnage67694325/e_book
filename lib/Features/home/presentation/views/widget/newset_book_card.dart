@@ -18,18 +18,24 @@ class NewsetBookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute);
+        GoRouter.of(context).push(
+          AppRouter.kBookDetailsViewRoute,
+          extra: book,
+        );
       },
       child: Row(
         children: [
-          SizedBox(
-            height: 100,
-            child: AspectRatio(
-                aspectRatio: 2.6 / 4,
-                child: CachedNetworkImage(
-                  imageUrl: book.volumeInfo?.imageLinks?.thumbnail ??
-                      AssetsData.comicCover,
-                )),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: SizedBox(
+              height: 100,
+              child: AspectRatio(
+                  aspectRatio: 2.6 / 4,
+                  child: CachedNetworkImage(
+                    imageUrl: book.volumeInfo?.imageLinks?.thumbnail ??
+                        AssetsData.comicCover,
+                  )),
+            ),
           ),
           const SizedBox(
             width: 30,
