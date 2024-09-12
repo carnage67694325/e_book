@@ -1,4 +1,4 @@
-import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/core/models/book_model/book_model.dart';
 import 'package:e_book/Features/home/presentation/view_models/similiar_books_cubit/similar_books_cubit.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_details_view_body.dart';
 import 'package:flutter/material.dart';

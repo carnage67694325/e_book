@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/core/models/book_model/book_model.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:e_book/constants.dart';
 import 'package:e_book/core/utils/app_router.dart';

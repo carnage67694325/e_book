@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/core/models/book_model/book_model.dart';
 import 'package:e_book/core/utils/widgets/custom_button_text.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';

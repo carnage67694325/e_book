@@ -1,4 +1,4 @@
-import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/core/models/book_model/book_model.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_card.dart';
 import 'package:e_book/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:e_book/core/utils/assets.dart';

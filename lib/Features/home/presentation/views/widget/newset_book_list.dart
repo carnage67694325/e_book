@@ -1,4 +1,4 @@
-import 'package:e_book/Features/home/data/models/book_model/book_model.dart';
+import 'package:e_book/core/models/book_model/book_model.dart';
 import 'package:e_book/Features/home/presentation/view_models/newset_books_cubit/newset_books_cubit.dart';
 import 'package:e_book/Features/home/presentation/views/widget/newset_book_card.dart';
 import 'package:e_book/core/utils/widgets/error_text.dart';
